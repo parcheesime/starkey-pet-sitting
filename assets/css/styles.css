@@ -1,11 +1,17 @@
 :root {
   --cream: #faf5e8;
-  --butter: #f5d285;  /* Soft diner yellow */
-  --peach: #826a5c;   /* Business card ear brown */
-  --coral: #cc454b;   /* Business card cherry red */
-  --teal: #70a6b2;    /* Business card light blue */
-  --mint: #8db83f;    /* Business card yellow-green */
-  --ink: #2f2625;     /* Business card dark brown-black */
+  --butter: #f5d285;
+  /* Soft diner yellow */
+  --peach: #826a5c;
+  /* Business card ear brown */
+  --coral: #cc454b;
+  /* Business card cherry red */
+  --teal: #70a6b2;
+  /* Business card light blue */
+  --mint: #8db83f;
+  /* Business card yellow-green */
+  --ink: #2f2625;
+  /* Business card dark brown-black */
   --paper: #fffdf9;
   --shadow: 8px 8px 0 rgba(47, 38, 37, 0.18);
 }
@@ -214,12 +220,13 @@ h3 {
   border-radius: 2rem;
   background: var(--mint);
   box-shadow: var(--shadow);
+  margin-top: -10.5rem;
 }
 
 .sunburst {
   position: absolute;
   inset: -35%;
-  background: repeating-conic-gradient(from 0deg, var(--butter) 0deg 12deg, var(--peach) 12deg 24deg);
+  background: repeating-conic-gradient(from 0deg, var(--teal) 0deg 12deg, var(--mint) 12deg 24deg);
   opacity: 0.85;
   animation: slow-spin 28s linear infinite;
 }
@@ -323,7 +330,8 @@ h3 {
 
 .contact-card {
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: var(--ink); /* Match the business card's dark brown */
+  background: var(--ink);
+  /* Match the business card's dark brown */
   color: var(--cream);
   border: 3px solid var(--ink);
   border-radius: 2rem;
