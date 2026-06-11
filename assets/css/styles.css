@@ -101,22 +101,7 @@ a {
   background: var(--mint);
 }
 
-.nav-cta,
-.button {
-  border: 2px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
 
-.nav-cta {
-  background: var(--butter);
-}
-
-.button:hover,
-.nav-cta:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--ink);
-}
 
 .nav-toggle {
   display: none;
@@ -193,14 +178,26 @@ h3 {
   margin-top: 2rem;
 }
 
+/* Navigation Call to Action & Buttons */
+.nav-cta,
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  font-weight: 900;
+}
+
+.nav-cta {
+  background: var(--butter);
+}
+
+.button {
   min-height: 3rem;
   padding: 0.8rem 1.15rem;
   border-radius: 999px;
-  font-weight: 900;
 }
 
 .button.primary {
@@ -210,6 +207,12 @@ h3 {
 
 .button.secondary {
   background: var(--paper);
+}
+
+.button:hover,
+.nav-cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .hero-card {
@@ -319,33 +322,29 @@ h3 {
   font-size: 2.5rem;
 }
 
-.why-panel {
-  padding: clamp(1.5rem, 4vw, 3rem);
-  background: var(--teal);
-  color: var(--ink);
-  border: 3px solid var(--ink);
-  border-radius: 2rem;
-  box-shadow: var(--shadow);
-}
-
+.why-panel,
 .contact-card {
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: var(--ink);
-  /* Match the business card's dark brown */
-  color: var(--cream);
   border: 3px solid var(--ink);
   border-radius: 2rem;
   box-shadow: var(--shadow);
 }
 
-.contact-card h2 {
-  color: var(--butter);
+.why-panel {
+  background: var(--teal);
+  color: var(--ink);
 }
 
 .why-panel .eyebrow {
   color: var(--ink);
 }
 
+.contact-card {
+  background: var(--ink); /* Match the business card's dark brown */
+  color: var(--cream);
+}
+
+.contact-card h2,
 .contact-card .eyebrow {
   color: var(--butter);
 }
@@ -439,31 +438,28 @@ textarea {
 }
 
 /* --- Retro 50s Section Styles --- */
+.about,
+.services,
+.why,
+.testimonial {
+  border-bottom: 3px solid var(--ink);
+}
+
 .about {
   background: var(--mint);
   border-top: 3px solid var(--ink);
-  border-bottom: 3px solid var(--ink);
 }
 
 .about .eyebrow {
   color: var(--ink);
 }
 
-.services {
-  background: var(--cream);
-  border-bottom: 3px solid var(--ink);
-}
-
-.why {
-  background: var(--paper);
-  border-bottom: 3px solid var(--ink);
-}
-
+.services,
 .testimonial {
   background: var(--cream);
-  border-bottom: 3px solid var(--ink);
 }
 
+.why,
 .contact {
   background: var(--paper);
 }
