@@ -1,13 +1,13 @@
 :root {
-  --cream: #fff4dc;
-  --butter: #ffd56b;
-  --peach: #ff9b73;
-  --coral: #f25f5c;
-  --teal: #247b7b;
-  --mint: #b8e1d9;
-  --ink: #2d2522;
-  --paper: #fffaf0;
-  --shadow: 8px 8px 0 rgba(45, 37, 34, 0.18);
+  --cream: #faf5e8;
+  --butter: #f5d285;  /* Soft diner yellow */
+  --peach: #826a5c;   /* Business card ear brown */
+  --coral: #cc454b;   /* Business card cherry red */
+  --teal: #70a6b2;    /* Business card light blue */
+  --mint: #8db83f;    /* Business card yellow-green */
+  --ink: #2f2625;     /* Business card dark brown-black */
+  --paper: #fffdf9;
+  --shadow: 8px 8px 0 rgba(47, 38, 37, 0.18);
 }
 
 * {
@@ -23,8 +23,8 @@ body {
   font-family: "Nunito", system-ui, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(255, 213, 107, 0.45), transparent 32rem),
-    linear-gradient(135deg, var(--cream), #fff9ed);
+    radial-gradient(circle at top left, rgba(245, 210, 133, 0.45), transparent 32rem),
+    linear-gradient(135deg, var(--cream), #fffbf0);
 }
 
 a {
@@ -40,10 +40,22 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem clamp(1rem, 4vw, 4rem);
-  background: rgba(255, 244, 220, 0.92);
-  border-bottom: 3px solid var(--ink);
+  padding: 1rem clamp(1rem, 4vw, 4rem) 1.5rem;
+  background: rgba(250, 245, 232, 0.92);
+  border-bottom: 4px solid var(--ink);
   backdrop-filter: blur(8px);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: conic-gradient(var(--cream) 90deg, var(--teal) 90deg 180deg, var(--cream) 180deg 270deg, var(--teal) 270deg);
+  background-size: 16px 16px;
+  border-top: 2px solid var(--ink);
 }
 
 .logo {
@@ -265,25 +277,61 @@ h3 {
 }
 
 .service-card {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: var(--paper);
   border: 3px solid var(--ink);
   border-radius: 1.5rem;
   box-shadow: var(--shadow);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 12px 12px 0 var(--ink);
+}
+
+.service-card:nth-child(1) {
+  border-top: 10px solid var(--teal);
+}
+
+.service-card:nth-child(2) {
+  background: var(--teal);
+  color: var(--paper);
+  border-top: 10px solid var(--butter);
+}
+
+.service-card:nth-child(2) h3 {
+  color: var(--butter);
+}
+
+.service-card:nth-child(3) {
+  border-top: 10px solid var(--mint);
 }
 
 .card-icon {
   font-size: 2.5rem;
 }
 
-.why-panel,
-.contact-card {
+.why-panel {
   padding: clamp(1.5rem, 4vw, 3rem);
   background: var(--teal);
-  color: white;
+  color: var(--paper);
   border: 3px solid var(--ink);
   border-radius: 2rem;
   box-shadow: var(--shadow);
+}
+
+.contact-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--ink); /* Match the business card's dark brown */
+  color: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-card h2 {
+  color: var(--butter);
 }
 
 .why-panel .eyebrow,
@@ -316,9 +364,10 @@ h3 {
   line-height: 1.25;
   text-align: center;
   background: var(--butter);
-  border: 3px solid var(--ink);
+  border: 3.5px solid var(--ink);
   border-radius: 2rem;
-  box-shadow: var(--shadow);
+  box-shadow: 12px 12px 0 var(--ink);
+  transform: rotate(1deg);
 }
 
 .contact-form {
@@ -333,6 +382,7 @@ label {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -340,6 +390,7 @@ textarea {
   border: 2px solid var(--ink);
   border-radius: 1rem;
   background: var(--paper);
+  color: var(--ink);
 }
 
 .form-note {
@@ -349,17 +400,61 @@ textarea {
 }
 
 .site-footer {
-  padding: 2rem 1rem;
+  padding: 3.5rem 1rem 3rem;
   text-align: center;
   font-weight: 800;
   background: var(--ink);
   color: var(--cream);
+  position: relative;
+  border-top: 4px solid var(--ink);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: conic-gradient(var(--cream) 90deg, var(--teal) 90deg 180deg, var(--cream) 180deg 270deg, var(--teal) 270deg);
+  background-size: 16px 16px;
+  border-bottom: 2px solid var(--ink);
 }
 
 @keyframes slow-spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* --- Retro 50s Section Styles --- */
+.about {
+  background: var(--mint);
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+
+.about .eyebrow {
+  color: var(--ink);
+}
+
+.services {
+  background: var(--cream);
+  border-bottom: 3px solid var(--ink);
+}
+
+.why {
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
+}
+
+.testimonial {
+  background: var(--cream);
+  border-bottom: 3px solid var(--ink);
+}
+
+.contact {
+  background: var(--paper);
 }
 
 @media (max-width: 850px) {
