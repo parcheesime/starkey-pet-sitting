@@ -1997,6 +1997,70 @@ img {
   border-top-color: color-mix(in srgb, var(--color-charcoal) 16%, transparent);
 }
 
+.framework-footer .copyright-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.framework-footer .copyright-bar p {
+  margin: 0;
+}
+
+.framework-footer .copyright-bar a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.privacy-content {
+  width: min(100%, 800px);
+  margin-inline: auto;
+  padding: var(--space-xl) 0 var(--space-3xl);
+  border-top: 1px solid var(--border);
+}
+
+.privacy-section + .privacy-section {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border);
+}
+
+.privacy-section h2 {
+  margin-bottom: var(--space-md);
+  color: var(--teal-text);
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+}
+
+.privacy-section p,
+.privacy-section li {
+  color: var(--color-charcoal);
+  font-size: var(--font-card-body);
+  line-height: 1.7;
+}
+
+.privacy-section p + p,
+.privacy-section ul + p {
+  margin-top: var(--space-md);
+}
+
+.privacy-section ul {
+  margin-top: var(--space-md);
+  padding-left: 1.4rem;
+}
+
+.privacy-section li + li {
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 560px) {
+  .framework-footer .copyright-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 1023px) {
   :root {
     --mobile-header-height: 9rem;
